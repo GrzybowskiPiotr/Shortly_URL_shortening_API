@@ -1,0 +1,314 @@
+@use "./cssReset";
+@use "./colors" as colors;
+@use "./typography";
+
+html {
+	font-family: Poppins-Regular;
+	font-size: 18px;
+}
+#root {
+	display: flex;
+	flex-direction: column;
+}
+body {
+	background-color: colors.$App_bg_color;
+}
+.appContainer {
+	flex-grow: 1;
+	padding: 0.6em 0;
+	overflow: hidden;
+	.button {
+		padding: 0.5em 1.3em;
+		background-color: colors.$Third_bg_color;
+		color: colors.$Bg_color;
+		font-family: Poppins-Bold;
+		letter-spacing: 0.1em;
+	}
+	.wide_btn {
+		width: 100%;
+		padding: 0.5em;
+		border-radius: 0.3em;
+		border: none;
+	}
+	.button_link {
+		border-radius: 1.5em;
+		text-transform: capitalize;
+	}
+	.navigation {
+		position: relative;
+		padding: 0.5em 0.6em;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: colors.$App_bg_color;
+		.BurgerMenu {
+			width: 1.6em;
+		}
+		.MobileNav {
+			position: absolute;
+			width: 95%;
+			height: fit-content;
+			left: 50%;
+			padding: 1em 0.5em;
+			top: 2.5em;
+			border-radius: 1em;
+			font-family: Poppins-Bold;
+			color: colors.$Bg_color;
+			background-color: colors.$Third_text_color;
+			transform: translateX(-50%);
+			z-index: 10;
+			ul {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 1.7em;
+				hr {
+					display: block;
+					height: 1px;
+					border: 0;
+					border-top: 1px solid colors.$Secondary_text_color;
+				}
+				li,
+				li:nth-last-of-type(1) {
+					min-width: 100%;
+					a {
+						display: block;
+						text-align: center;
+						width: 100%;
+					}
+				}
+				li:nth-last-of-type(1) {
+					margin-bottom: 1.2em;
+				}
+			}
+		}
+	}
+	.hero {
+		position: relative;
+		height: fit-content;
+
+		margin-bottom: 2em;
+		background-color: colors.$Bg_color;
+		img {
+			margin: 4em 0;
+			transform: scale(135%);
+			left: 24%;
+		}
+		a {
+			margin-bottom: 9.5em;
+		}
+	}
+	section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		gap: 0.85em;
+		h1 {
+			color: colors.$Third_text_color;
+			font-family: Poppins-Bold;
+			font-size: 2.3em;
+		}
+		p {
+			margin-bottom: 0.9em;
+			font-family: Poppins-Medium;
+			color: colors.$Secondary_text_color;
+		}
+		.button {
+			font-family: Poppins-Bold;
+			font-size: 1.1em;
+			padding: 0.8em 2.2em;
+		}
+	}
+	.card {
+		border-radius: 0.4em;
+		padding: 1em;
+		width: 90%;
+	}
+	.ShortedSection {
+		display: flex;
+		width: 100dvw;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1.3em;
+		background-color: colors.$App_bg_color;
+		form {
+			margin-top: -5em;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 1em;
+			background-color: colors.$Third_text_color;
+			background-image: url(/images/bg-shorten-mobile.svg);
+			background-repeat: no-repeat;
+			background-size: 70% 80%;
+			background-position: 100% 0;
+			z-index: 10;
+			input,
+			button {
+				width: 100%;
+				padding: 0.5em;
+				border-radius: 0.3em;
+				border: none;
+			}
+
+			label {
+				width: 100%;
+			}
+		}
+		.linkCard {
+			background-color: colors.$Bg_color;
+		}
+	}
+	section {
+		margin: 4.5em 0;
+	}
+	.AdvanceStatisicContainer {
+		.statistics {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 5em;
+		}
+		.cardWithIcon {
+			position: relative;
+			padding: 1em;
+			width: 90%;
+			background-color: colors.$Bg_color;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			gap: 2em;
+			z-index: 10;
+			h2 {
+				margin-top: 2.5em;
+				font-family: Poppins-bold;
+			}
+			p {
+				margin-bottom: 1.5em;
+				color: colors.$Secondary_text_color;
+			}
+			.iconContainer {
+				position: absolute;
+				padding: 1em;
+				border-radius: 50%;
+				top: -2em;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: colors.$Third_text_color;
+				z-index: 5;
+			}
+		}
+	}
+	.statistics::after {
+		position: absolute;
+		display: block;
+		content: "";
+		width: 0.5em;
+		height: 100%;
+		background-color: colors.$Third_bg_color;
+		top: 0;
+	}
+	.cta {
+		width: 100%;
+		aspect-ratio: 1/0.8;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5em;
+		margin-top: 5.25em;
+		color: colors.$Bg_color;
+		background-color: colors.$Third_text_color;
+		background-image: url(/images/bg-boost-mobile.svg);
+		background-size: cover;
+		a {
+			padding: 0.8em 2.25em;
+		}
+	}
+	.appFooter {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2.3em;
+		padding: 3em;
+		text-align: center;
+		background-color: colors.$Main_text_color;
+		color: colors.$Main_bg_color;
+		h2,
+		h3 {
+			color: #ffff;
+			margin-bottom: 1.25em;
+		}
+		.listLink {
+			ul {
+				li {
+					margin-bottom: 0.8em;
+				}
+			}
+		}
+		.iconsContainer {
+			ul {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				gap: 1.3em;
+			}
+		}
+	}
+}
+.footer {
+	width: 100%;
+	text-align: center;
+	color: currentColor;
+	background-color: var(--Pale_blue);
+	font-size: 0.7rem;
+	z-index: 2;
+}
+@media (min-width: 768px) {
+	.appContainer {
+		.navigation {
+			flex-direction: row;
+			align-items: center;
+			.BurgerMenu {
+				display: none;
+			}
+			nav {
+				display: flex;
+				font-size: 0.8em;
+				letter-spacing: 0.1em;
+				flex-grow: 1;
+				justify-content: space-between;
+				align-items: center;
+				font-family: Poppins-Bold;
+				color: colors.$Secondary_text_color;
+			}
+			.navLinks {
+				display: flex;
+				gap: 1.7em;
+				margin-left: 2.5em;
+			}
+			.navLinks * a:hover {
+				color: colors.$Main_text_color;
+			}
+			.loginContainer {
+				display: flex;
+				gap: 2em;
+			}
+			img {
+				width: 6.5em;
+				height: 1.8em;
+			}
+		}
+	}
+}
