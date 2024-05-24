@@ -1,6 +1,6 @@
 import { LinksList } from "../LinksList/LinksList";
 import { Link } from "../../types/types";
-import { Footer } from "../Footer/Footer";
+
 import { srcToAltConvert } from "../../util/srcToAltConvert";
 
 export function AppFooter() {
@@ -51,23 +51,29 @@ export function AppFooter() {
 	];
 
 	return (
-		<div className="appFooter">
-			<h2>Shortly</h2>
-			<LinksList title="Features" links={FeaturesLinks} />
-			<LinksList title="Resources" links={ResourcesLinks} />
-			<LinksList title="Company" links={CompanyLinks} />
-			<div className="iconsContainer">
-				<ul>
-					{IconsLinks.map((iconLink, idx) => (
-						<li key={idx}>
-							<a>
-								<img src={iconLink.icon} alt={srcToAltConvert(iconLink.icon)} />
-							</a>
-						</li>
-					))}
-				</ul>
+		<footer>
+			<div className="appFooter">
+				<h2>Shortly</h2>
+				<div className="linksContainer">
+					<LinksList title="Features" links={FeaturesLinks} />
+					<LinksList title="Resources" links={ResourcesLinks} />
+					<LinksList title="Company" links={CompanyLinks} />
+					<div className="iconsContainer">
+						<ul>
+							{IconsLinks.map((iconLink, idx) => (
+								<li key={idx}>
+									<a>
+										<img
+											src={iconLink.icon}
+											alt={srcToAltConvert(iconLink.icon)}
+										/>
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
+				</div>
 			</div>
-			<Footer />
-		</div>
+		</footer>
 	);
 }
