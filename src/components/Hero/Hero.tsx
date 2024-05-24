@@ -1,3 +1,4 @@
+
 import { LinkButton } from "../LinkButton/LinkButton";
 import { Section } from "../Section/Section";
 import HERO from "/images/illustration-working.svg";
@@ -10,7 +11,7 @@ export function Hero() {
 				desc={
 					"Build your brand’s recognition and get detailed insights on how your links are performing."
 				}
-				button={<LinkButton>{"Get Started"}</LinkButton>}></Section>
+				button={<LinkButton href={"#"}>{"Get Started"}</LinkButton>}></Section>
 		</div>
 	);
 }
