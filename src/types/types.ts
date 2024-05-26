@@ -9,3 +9,4 @@ export interface ShortLink {
 	isLinkCopied: boolean;
 	onCopyClick?: () => void;
 }
+export type link = { url: string; title: string };
