@@ -65,8 +65,6 @@ export function ShorteningFormAndResultsContainer() {
 		}
 	}
 
-	console.log(shortLinks);
-
 	return (
 		<div className="ShortedSection">
 			<form className="card" onSubmit={(e: FormEvent) => handleFormSubmit(e)}>
