@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 
 type AppContainer = {
-	name: "";
+	name: "AppContainer";
 };
 
 export function AppContainer({ children }: PropsWithChildren<AppContainer>) {
