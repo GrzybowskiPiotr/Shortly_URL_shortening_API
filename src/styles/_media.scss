@@ -1,0 +1,205 @@
+@use "./colors" as colors;
+
+.appContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	a,
+	button {
+		transition: filter 0.3s;
+	}
+	a:hover,
+	button:hover {
+		cursor: pointer;
+		filter: brightness(1.1);
+	}
+	section {
+		text-align: left;
+		max-width: 600px;
+		h1 {
+			font-size: 4em;
+			line-height: 1;
+		}
+	}
+	.navigation {
+		width: 100%;
+		padding: 50px;
+		flex-direction: row;
+		align-items: center;
+		.BurgerMenu {
+			display: none;
+		}
+		nav {
+			display: flex;
+			font-size: 0.8em;
+			letter-spacing: 0.1em;
+			flex-grow: 1;
+			justify-content: space-between;
+			align-items: center;
+			font-family: Poppins-Bold;
+			color: colors.$Secondary_text_color;
+		}
+		.navLinks {
+			display: flex;
+			gap: 1.7em;
+			margin-left: 2.5em;
+		}
+		.navLinks * a:hover {
+			color: colors.$Main_text_color;
+		}
+		.loginContainer {
+			display: flex;
+			gap: 2em;
+		}
+		img {
+			width: 6.5em;
+			height: 1.8em;
+		}
+	}
+	.hero {
+		width: 100%;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		img {
+			width: 45%;
+			transform: scale(1.1);
+			left: 50px;
+		}
+		section {
+			padding-left: 50px;
+			flex-grow: 1;
+			flex-basis: 40%;
+			align-items: flex-start;
+		}
+	}
+	.ShortedSection {
+		.card {
+			max-width: 1100px;
+		}
+		form {
+			position: relative;
+			flex-direction: row;
+			padding: 2.8em;
+			background-image: url(/images/bg-shorten-desktop.svg);
+			background-size: cover;
+			label {
+				flex-grow: 1;
+			}
+			input,
+			.button {
+				padding: 1em 2em;
+				border-radius: 0.5em;
+			}
+			.button {
+				flex-shrink: 1;
+				width: 250px;
+			}
+		}
+	}
+	.linkCard {
+		display: flex;
+		justify-content: space-between;
+		hr {
+			display: none;
+		}
+		.shortLinkContainer {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			gap: 1.3em;
+			p {
+				color: colors.$Third_bg_color;
+			}
+			button {
+				width: 100px;
+			}
+		}
+	}
+	.AdvanceStatisicContainer {
+		align-items: center;
+		max-width: 1100px;
+		display: flex;
+		flex-direction: column;
+
+		section {
+			text-align: center;
+			h2 {
+				font-family: Poppins-Bold;
+				font-size: 2em;
+			}
+		}
+		.statistics {
+			max-width: 1100px;
+			gap: 1.6em;
+			flex-direction: row;
+			.cardWithIcon {
+				padding: 32px;
+				align-items: flex-start;
+				text-align: left;
+				font-size: 0.8em;
+				gap: 0.6em;
+				height: 260px;
+				$base-margin: 40px;
+				@for $i from 1 through 3 {
+					&:nth-of-type(#{$i}) {
+						top: calc(#{$i} * #{$base-margin});
+					}
+				}
+				.iconContainer {
+					transform: none;
+					left: auto;
+				}
+			}
+		}
+		.statistics::after {
+			height: 0.5em;
+			width: 100%;
+			top: 75%;
+			transform: translateY(-50%);
+		}
+	}
+	.cta {
+		margin-top: 12em;
+		h2 {
+			font-size: 2.2em;
+		}
+		height: 14em;
+		background-image: url(/images/bg-boost-desktop.svg);
+	}
+	footer {
+		width: 100%;
+		a:hover {
+			color: colors.$Third_bg_color;
+		}
+		.appFooter {
+			width: 85%;
+			flex-direction: row;
+			gap: 0;
+			align-items: start;
+			h2 {
+				flex-basis: 400px;
+				text-align: left;
+			}
+			.linksContainer {
+				flex-grow: 1;
+				display: flex;
+				flex-direction: row;
+				gap: 5.5em;
+				.listLink {
+					text-align: left;
+					text-wrap: nowrap;
+				}
+			}
+			.iconsContainer {
+				flex-shrink: 0;
+				img:hover,
+				img:focus {
+					filter: invert(65%) sepia(54%) saturate(656%) hue-rotate(131deg)
+						brightness(170%) contrast(94%);
+				}
+			}
+		}
+	}
+}

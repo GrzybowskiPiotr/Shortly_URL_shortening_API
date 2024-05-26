@@ -29,6 +29,9 @@ body {
 		border-radius: 0.3em;
 		border: none;
 	}
+	.copied_btn {
+		background-color: colors.$Third_text_color;
+	}
 	.button_link {
 		border-radius: 1.5em;
 		text-transform: capitalize;
@@ -149,6 +152,7 @@ body {
 			background-size: 70% 80%;
 			background-position: 100% 0;
 			z-index: 10;
+			overflow: hidden;
 			input,
 			button {
 				width: 100%;
@@ -160,17 +164,44 @@ body {
 			label {
 				width: 100%;
 			}
-			p {	
+			p {
+				display: block;
+				width: 100%;
+				text-align: left;
 				font-family: Poppins-italic;
-				position: absolute;
-				bottom: 20px;
-				left: 52px;
 				color: red;
+			}
+			.loadingModal {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				backdrop-filter: blur(10px);
+				z-index: 10;
+				img {
+					position: absolute;
+					left: 50%;
+					top: 35%;
+					width: 50px;
+					height: 50px;
+					transform: translate(-50%, -50%);
+					filter: invert(65%) sepia(54%) saturate(656%) hue-rotate(131deg)
+						brightness(130%) contrast(94%);
+					animation: spining;
+					animation-timing-function: linear;
+					animation-duration: 3s;
+					animation-iteration-count: infinite;
+					animation-play-state: running;
+				}
 			}
 		}
 		.linkCard {
 			background-color: colors.$Bg_color;
 			max-width: 1100px;
+			h3 {
+				display: flex;
+				flex-wrap: wrap;
+				max-width: 40%;
+			}
 		}
 	}
 	section {
@@ -369,6 +400,7 @@ body {
 				max-width: 1100px;
 			}
 			form {
+				position: relative;
 				flex-direction: row;
 				padding: 2.8em;
 				background-image: url(/images/bg-shorten-desktop.svg);
@@ -384,6 +416,11 @@ body {
 				.button {
 					flex-shrink: 1;
 					width: 250px;
+				}
+				p {
+					position: absolute;
+					bottom: 20px;
+					left: 52px;
 				}
 			}
 		}
@@ -492,5 +529,13 @@ body {
 				}
 			}
 		}
+	}
+}
+@keyframes spining {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
 	}
 }
