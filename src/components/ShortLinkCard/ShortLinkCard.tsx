@@ -1,16 +1,19 @@
 import { ShortLink } from "../../types/types.ts";
 
+interface Props extends ShortLink {
+	onCopyClick: () => void;
+}
+
 export function ShortLinkCard({
-	id,
 	longLink,
 	shortLink,
 	isLinkCopied,
 	onCopyClick,
-}: ShortLink) {
+}: Props) {
 	async function handleCopyButtonClick() {
 		try {
 			await navigator.clipboard.writeText(shortLink);
-			onCopyClick(id);
+			onCopyClick();
 		} catch (err) {
 			console.error(`Unable to copy to clipboard. ${err}`);
 			alert("Copy to clipboard faild.");
@@ -24,7 +27,7 @@ export function ShortLinkCard({
 			<div className="shortLinkContainer">
 				<p>{shortLink}</p>
 				<button
-					className={`button wide_btn ${isLinkCopied ?  "copied_btn" : ""}`}
+					className={`button wide_btn ${isLinkCopied ? "copied_btn" : ""}`}
 					onClick={handleCopyButtonClick}>
 					{isLinkCopied ? "Copied" : "Copy"}
 				</button>

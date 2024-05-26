@@ -7,6 +7,5 @@ export interface ShortLink {
 	longLink: string;
 	shortLink: string;
 	isLinkCopied: boolean;
-	onCopyClick?: () => void;
 }
 export type link = { url: string; title: string };
