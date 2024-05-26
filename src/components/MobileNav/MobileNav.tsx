@@ -1,5 +1,5 @@
 import { LinkButton } from "../LinkButton/LinkButton";
-import { link } from "../Navigation/Navigation";
+import { link } from "../../types/types";
 export function MobileNav({ NavLinks }: { NavLinks?: link[] }) {
 	return (
 		<nav className="MobileNav">

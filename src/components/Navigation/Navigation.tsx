@@ -8,8 +8,7 @@ import { link } from "../../types/types";
 
 export function Navigation() {
 	const [isMenuActive, setIsMenuActive] = useState<boolean>(false);
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	const { _, width } = useWindowDimensions();
+	const { width } = useWindowDimensions();
 
 	const NavLinks: link[] = [
 		{ url: "#", title: "Features" },

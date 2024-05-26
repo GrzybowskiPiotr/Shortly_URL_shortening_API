@@ -1,7 +1,6 @@
 import { LinkButton } from "../LinkButton/LinkButton";
-import { link } from "../Navigation/Navigation";
+import { link } from "../../types/types";
 export function DesktopNav({ NavLinks }: { NavLinks: link[] }) {
-
 	return (
 		<nav>
 			<ul className="navLinks">
