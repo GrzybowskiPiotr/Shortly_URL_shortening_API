@@ -38,6 +38,7 @@ export function ShorteningFormAndResultsContainer() {
 		})
 			.then((res) => res.json())
 			.then((res) => {
+				console.log(res)
 				setShortLinks((prevLinks) => [
 					{
 						longLink: res.url,
@@ -49,7 +50,8 @@ export function ShorteningFormAndResultsContainer() {
 				]);
 
 				setIsLoading(false);
-			});
+			})
+			
 	}
 
 	function handleFormSubmit(e: FormEvent) {

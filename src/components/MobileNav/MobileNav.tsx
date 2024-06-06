@@ -16,7 +16,7 @@ export function MobileNav({ NavLinks }: { NavLinks?: link[] }) {
 					<a href="">Login</a>
 				</li>
 				<li>
-					<LinkButton href="#">{"Sing Up"}</LinkButton>
+					<LinkButton href="">{"Sing Up"}</LinkButton>
 				</li>
 			</ul>
 		</nav>

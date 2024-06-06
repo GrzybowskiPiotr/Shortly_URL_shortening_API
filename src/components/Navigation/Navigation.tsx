@@ -11,9 +11,9 @@ export function Navigation() {
 	const { width } = useWindowDimensions();
 
 	const NavLinks: link[] = [
-		{ url: "#", title: "Features" },
-		{ url: "#", title: "Pricing" },
-		{ url: "#", title: "Resources" },
+		{ url: "", title: "Features" },
+		{ url: "", title: "Pricing" },
+		{ url: "", title: "Resources" },
 	];
 
 	function handleBurgerMenuClick() {
